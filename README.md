@@ -1,2 +1,2 @@
 # quiz_app
- Quiz App
+This is a basic quiz app that does basic addition.
