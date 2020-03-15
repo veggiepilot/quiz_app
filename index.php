@@ -1,6 +1,6 @@
 <?php
 
-include('inc/quiz.php');
+include('inc/generate_questions.php');
 
 ?>
 <!DOCTYPE html>
