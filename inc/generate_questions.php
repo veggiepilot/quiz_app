@@ -25,8 +25,18 @@ if (!isset($_SESSION['dynamic_questions'])) {
         $questions[$i]['rightAdder']            = rand(0, 75);
         $questions[$i]['correctAnswer']         = $questions[$i]['leftAdder'] +
             $questions[$i]['rightAdder'];
-        $questions[$i]['firstIncorrectAnswer']  = $questions[$i]['correctAnswer'] + 10;
-        $questions[$i]['secondIncorrectAnswer'] = $questions[$i]['correctAnswer'] - 10;
+
+        do {
+
+            $questions[$i]['firstIncorrectAnswer']  = $questions[$i]['correctAnswer'] + rand(-10, 10);
+            $questions[$i]['secondIncorrectAnswer'] = $questions[$i]['correctAnswer'] + rand(-10, 10);
+
+        } while ($questions[$i]['firstIncorrectAnswer'] == $questions[$i]['correctAnswer'] ||
+        ($questions[$i]['secondIncorrectAnswer'] == $questions[$i]['correctAnswer'] || ($questions[$i]['secondIncorrectAnswer'] == $questions[$i]['firstIncorrectAnswer']
+            )
+
+        )
+        );
 
     }
 
